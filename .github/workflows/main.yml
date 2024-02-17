@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Mailed Games</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .typeform-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Daily Mailed Games</h1>
+        <p>Explore our selection of exciting games that will keep you entertained daily!</p>
+        <div class="typeform-container">
+            <div data-tf-live="01HPV783086K03X6J5ZCBKWJAB"></div>
+            <script src="//embed.typeform.com/next/embed.js"></script>
+        </div>
+    </div>
+</body>
+</html>
