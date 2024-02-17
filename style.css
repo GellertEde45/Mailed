@@ -39,4 +39,15 @@ p {
 .typeform-container {
   margin-top: 30px;
 }
+/* Styles for white box overlay */
+.container::after {
+  content: ""; /* Create pseudo-element */
+  position: absolute; /* Position the overlay */
+  bottom: 0; /* Align to the bottom of the container */
+  left: 0; /* Align to the left of the container */
+  width: 100%; /* Cover the entire width */
+  height: 105px; /* Set the height of the overlay */
+  background-color: white; /* Set background color to white */
+  z-index: 1; /* Ensure the overlay is above other content */
+}
 
