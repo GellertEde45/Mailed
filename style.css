@@ -5,45 +5,50 @@ body, h1, h2, h3, p, ul, li {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9; /* Light gray background */
 }
 
 header {
-    background-color: #1e1e1e;
+    background-color: #007bff; /* Blue header */
     color: #fff;
     padding: 20px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo {
+    margin-right: 20px;
 }
 
 #logo img {
-    width: 150px; /* Adjust as needed */
+    width: 80px; /* Smaller logo size */
 }
 
-nav ul {
-    list-style-type: none;
+#site-title {
+    text-align: center;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+#site-title h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
+#site-title p {
+    font-size: 18px;
+    color: #ccc; /* Light gray text for description */
 }
 
 footer {
-    background-color: #1e1e1e;
+    background-color: #007bff; /* Blue footer */
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
+
