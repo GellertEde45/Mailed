@@ -46,9 +46,8 @@ p {
   bottom: 0; /* Align to the bottom of the container */
   left: 0; /* Align to the left of the container */
   width: 100%; /* Cover the entire width */
-  height: 5%; /* Set the height of the overlay to 10% of the container's height */
+  height: 17%; /* Set the height of the overlay to 10% of the container's height */
   background-color: white; /* Set background color to white */
   z-index: 1; /* Ensure the overlay is above other content */
 }
-
 
