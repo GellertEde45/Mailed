@@ -39,6 +39,9 @@ p {
 .typeform-container {
   margin-top: 30px;
 }
+.container {
+  position: relative; /* Add relative positioning to the container */
+}
 /* Styles for white box overlay */
 .container::after {
   content: ""; /* Create pseudo-element */
