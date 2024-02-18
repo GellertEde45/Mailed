@@ -46,8 +46,23 @@ p {
   bottom: 0; /* Align to the bottom of the container */
   left: 0; /* Align to the left of the container */
   width: 100%; /* Cover the entire width */
-  height: 17%; /* Set the height of the overlay to 10% of the container's height */
+  height: 14%; /* Set the height of the overlay to 10% of the container's height */
   background-color: white; /* Set background color to white */
   z-index: 1; /* Ensure the overlay is above other content */
 }
 
+.container {
+  position: relative; /* Add relative positioning to the container */
+}
+
+.container::after {
+  content: ""; /* Create pseudo-element */
+  position: absolute; /* Position the overlay */
+  bottom: 0; /* Align to the bottom of the container */
+  left: 0; /* Align to the left of the container */
+  width: 100%; /* Cover the entire width */
+  height: 200px; /* Set the height of the overlay */
+  background-color: rgb(170, 5, 5); /* Set background color to white */
+  z-index: 1; /* Ensure the overlay is above other content */
+}
+With this CSS, the white box overla
