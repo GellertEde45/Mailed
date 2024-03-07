@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Mailed Games</title>
+    <style>
+      /* Styles for the sidebar menu */
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #5489dd;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+      }
+
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ffffff;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #5489dd;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        position: absolute;
+        top: 20px; /* Adjust top position as needed */
+        left: 20px; /* Adjust left position as needed */
+      }
+
+      .openbtn:hover {
+        background-color: #5489dd;
+      }
+
+      /* Style page content */
+      #main {
+        transition: margin-left 0.5s;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="index.html">Home</a>
+        <a href=" "> </a>
+        <a href="downloads.html">Online Games</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <!-- Page content -->
+      <div id="main">
+        <button class="openbtn" onclick="openNav()">&#9776; Sidebar</button>
+      </div>
+    </div>
+
+    <script>
+      // Function to open the sidebar
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      // Function to close the sidebar
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Games</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      h1 {
+        margin-bottom: 100px;
+      }
+      .btn {
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: #5489dd;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-bottom: 10px;
+        width: 200px; /* Same width for all buttons */
+      }
+      .btn:hover {
+        background-color: #4477cc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Online Games</h1>
+    <button class="btn" onclick="startSudoku()">Sudoku</button>
+    <button class="btn" onclick="goToNonograms()">Nonograms</button>
+    <script>
+      function startSudoku() {
+        window.location.href = "sudoku.html";
+      }
+
+      function goToNonograms() {
+        window.location.href = "nonograms.html";
+      }
+    </script>
+  </body>
+</html>
