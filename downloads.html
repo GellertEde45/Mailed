@@ -2,67 +2,83 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Games</title>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Puzzle Games</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Adjusted to move the title to the top */
-            align-items: center;
-            text-align: center;
-            padding-top: 20px; /* Added padding to the top */
-        }
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        background-color: #f0f0f0; /* Fallback color if the background image doesn't load */
+      }
 
-        h1 {
-            margin-bottom: 115px; /* Reduced margin to accommodate the subtitle */
-        }
+      .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+        font-family: Arial, sans-serif;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-image: url("background.png");
+        background-size: cover;
+      }
 
-        h2 {
-            margin-top: 0; /* Reset margin */
-            font-size: 16px; /* Adjusted font size for the subtitle */
-            color: #666; /* Adjusted color for the subtitle */
-        }
+      h1 {
+        margin-bottom: 20px;
+        color: hwb(221 0% 61%); /* Dark green color for the title */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Added a subtle shadow effect to the title */
+        font-size: 60px; /* Increased font size for a majestic effect */
+        transform: scaleY(1.2); /* Added mirror-like effect by scaling */
+      }
 
-        .btn {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #5489dd;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-bottom: 10px;
-            width: 200px; /* Same width for all buttons */
-        }
+      h2 {
+        font-size: 16px;
+        color: #666;
+      }
 
-        .btn:hover {
-            background-color: #4477cc;
-        }
+      .btn {
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: #5489dd;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 10px;
+        width: 200px;
+        box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3); /* Increased shadow on the buttons */
+      }
+
+      .btn:hover {
+        background-color: #4477cc;
+        box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+      }
     </style>
-</head>
-<body>
-<h1>Online Games</h1>
-<h2> </h2>
-<button class="btn" onclick="startSudoku()">Sudoku</button>
-<button class="btn" onclick="goToNonograms()">Nonograms</button>
-<script>
-    function startSudoku() {
+  </head>
+  <body>
+    <div class="content-container">
+      <h1>Online Puzzle Games</h1>
+      <h2>Choose a game to play:</h2>
+      <button class="btn" onclick="startSudoku()">Sudoku</button>
+      <button class="btn" onclick="goToNonograms()">Nonograms</button>
+    </div>
+    <script>
+      function startSudoku() {
         window.location.href = "sudoku.html";
-    }
+      }
 
-    function goToNonograms() {
+      function goToNonograms() {
         window.location.href = "nonograms.html";
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4960111577446412"
-     crossorigin="anonymous"></script>
