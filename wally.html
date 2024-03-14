@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wheres Wally</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <div class="wrapper">
+      <div class="content">
+        <h1>Where's Wally</h1>
+        <h3>mailedgames.online</h3>
+      </div>
+      <img
+        class="image-zoom-available"
+        src="https://s-media-cache-ak0.pinimg.com/originals/0b/1f/03/0b1f03eacd8b96dd32d476680d200ac2.jpg"
+        draggable="false"
+      />
+      <img
+        class="image-zoom-available"
+        src="http://4.bp.blogspot.com/-NjohvYgHUQU/Ttcs_ommPRI/AAAAAAAABA0/wm6M6HxbI28/s1600/Play+Wheres+Waldo+Online+Puzzle+Game+Department+Store+Shopping+Mall.jpg"
+        draggable="false"
+      />
+    </div>
+
+    <style>
+      * {
+        user-select: none;
+      }
+      .wrapper {
+        overflow: hidden;
+        padding: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .content {
+        margin-bottom: 30px;
+      }
+
+      img {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .image-zoom-available {
+        cursor: zoom-in;
+      }
+      .image-zoom-available.is-active {
+        cursor: none;
+      }
+    </style>
+
+    <script>
+      let settings = {
+        magnification: 3,
+        maskSize: 200,
+      };
+
+      window.addEventListener("load", () => {
+        let images = document.querySelectorAll(".image-zoom-available");
+        Array.prototype.forEach.call(images, (image) => {
+          new Zoombini(image);
+        });
+      });
+
+      class Zoombini {
+        constructor(targetImage) {
+          this.image = targetImage;
+          this.isActive = false;
+          this.maskSize = 0;
+          this.mousex = this.mousey = 0;
+
+          this.imageZoom = this.image.cloneNode();
+          this.image.parentNode.insertBefore(this.imageZoom, this.image);
+          this.imageZoom.style.zIndex = 1;
+          this.imageZoom.style.pointerEvents = "none";
+          this.imageZoom.style.position = "absolute";
+
+          this.resizeImageZoom();
+          window.addEventListener(
+            "resize",
+            this.resizeImageZoom.bind(this),
+            false
+          );
+
+          this.UI();
+          this.drawMask();
+        }
+
+        resizeImageZoom() {
+          this.imageZoom.style.width =
+            this.image.getBoundingClientRect().width * settings.magnification +
+            "px";
+        }
+
+        UI() {
+          this.image.addEventListener("mousemove", (event) => {
+            this.mousex =
+              event.clientX - this.image.getBoundingClientRect().left;
+            this.mousey =
+              event.clientY - this.image.getBoundingClientRect().top;
+
+            if (!this.isActive) return;
+            this.drawMask();
+          });
+
+          this.image.addEventListener("mousedown", () => {
+            this.isExpanding = true;
+            this.maskSizer();
+            this.image.classList.add("is-active");
+          });
+
+          this.image.addEventListener("mouseup", () => {
+            this.isExpanding = false;
+            if (this.isActive) this.maskSizer();
+          });
+
+          this.image.addEventListener("mouseout", () => {
+            this.isExpanding = false;
+            if (this.isActive) this.maskSizer();
+          });
+        }
+
+        drawMask() {
+          let image = this.image.getBoundingClientRect();
+          let imageZoom = this.imageZoom.getBoundingClientRect();
+          let prop_x =
+            (this.mousex / image.width) *
+              imageZoom.width *
+              (1 - 1 / settings.magnification) -
+            image.x -
+            window.scrollX;
+          let prop_y =
+            (this.mousey / image.height) *
+              imageZoom.height *
+              (1 - 1 / settings.magnification) -
+            image.y -
+            window.scrollY;
+
+          this.imageZoom.style.left = -prop_x + "px";
+          this.imageZoom.style.top = -prop_y + "px";
+
+          let x = this.mousex * settings.magnification;
+          let y = this.mousey * settings.magnification;
+          let clippy =
+            "circle(" + this.maskSize + "px at " + x + "px " + y + "px)";
+          this.imageZoom.style.clipPath = clippy;
+          this.imageZoom.style.webkitClipPath = clippy;
+        }
+
+        maskSizer() {
+          this.maskSize = this.isExpanding
+            ? this.maskSize + 35
+            : this.maskSize - 40;
+
+          if (this.maskSize >= settings.maskSize) {
+            this.maskSize = settings.maskSize;
+            this.isActive = true;
+          } else if (this.maskSize < 0) {
+            this.maskSize = 0;
+            this.isActive = false;
+            this.image.classList.remove("is-active");
+          } else {
+            requestAnimationFrame(this.maskSizer.bind(this));
+          }
+          this.drawMask();
+        }
+      }
+    </script>
+  </head>
+</html>
