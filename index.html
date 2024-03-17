@@ -130,7 +130,6 @@
     <div class="content-container">
       <img class="logo" src="logo1.png" alt="Logo 1" />
       <h1>Online Puzzle Games</h1>
-      <h3>mailedgames.online</h3>
       <h2>Choose a game to play:</h2>
       <div class="btn-container">
         <button class="btn" onclick="startSudoku()">
@@ -152,6 +151,10 @@
         <button class="btn" onclick="goToMaze()">
           <img src="image5.png" alt="TILTING MAZE" />
           <span class="btn-text">TILTING MAZE</span>
+        </button>
+        <button class="btn" onclick="goToSliding()">
+          <img src="image6.png" alt="SLIDING PUZZLE" />
+          <span class="btn-text">SLIDING PUZZLE</span>
         </button>
         <!-- Add more buttons for additional games -->
       </div>
@@ -175,6 +178,9 @@
       }
       function goToMaze() {
         window.location.href = "maze.html";
+      }
+      function goToSliding() {
+        window.location.href = "sliding.html";
       }
       // Other functions for game redirection...
     </script>
@@ -240,4 +246,5 @@
     </script>
   </body>
 </html>
+
 
