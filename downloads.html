@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Puzzle Games</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <!-- Add any additional stylesheets or meta tags here -->
+    <
+      <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title style="color : #5489dd">Online Puzzle Games</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
     <style>
-      body,
-      html {
-        height: 100%;
+      body {
+        font-family: "Lato", sans-serif;
+        -webkit-font-smoothing: antialiased;
         margin: 0;
-        background-color: #f0f0f0; /* Fallback color if the background image doesn't load */
+        background: #f5f5f5;
       }
 
       .content-container {
@@ -18,58 +28,103 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        text-align: center;
         padding-top: 50px;
-        font-family: Arial, sans-serif;
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        background-image: url("background.png");
-        background-size: cover;
+      }
+
+      .logo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
       }
 
       h1 {
-        margin-bottom: 150px;
-        color: hwb(221 0% 61%); /* Dark green color for the title */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Added a subtle shadow effect to the title */
-        font-size: 60px; /* Increased font size for a majestic effect */
-        transform: scaleY(1.2); /* Added mirror-like effect by scaling */
+        font-size: 70px;
+        line-height: 60px;
+        margin: 0;
+        text-transform: uppercase;
       }
 
       h2 {
+        font-size: 23px;
+        margin: 0;
+        text-transform: uppercase;
+        margin-top: 10px;
+      }
+
+      h3 {
+        opacity: 0.3;
+        font-style: italic;
+        font-weight: 400;
         font-size: 16px;
-        color: #666;
+        margin-top: 30px;
+      }
+
+      .btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
       }
 
       .btn {
-        padding: 15px 30px;
-        font-size: 18px;
-        background-color: #5489dd;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        margin-bottom: 10px;
         width: 200px;
-        box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3); /* Increased shadow on the buttons */
+        height: 200px;
+        background-color: #fff;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .btn img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 10px;
       }
 
       .btn:hover {
-        background-color: #4477cc;
-        box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+        transform: scale(1.1) rotate(360deg);
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-text {
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <div class="content-container">
+      <img class="logo" src="logo1.png" alt="Logo 1" />
       <h1>Online Puzzle Games</h1>
       <h2>Choose a game to play:</h2>
-      <button class="btn" onclick="startSudoku()">Sudoku</button>
-      <button class="btn" onclick="goToNonograms()">Nonograms</button>
-      <button class="btn" onclick="goToWally()">Wheres Wally</button>
-      <button class="btn" onclick="goToStick()">Stick Hero</button>
+      <div class="btn-container">
+        <button class="btn" onclick="startSudoku()">
+          <img src="image1.png" alt="Sudoku" />
+          <span class="btn-text">SUDOKU</span>
+        </button>
+        <button class="btn" onclick="goToNonograms()">
+          <img src="image2.png" alt="Nonograms" />
+          <span class="btn-text">NONOGRAMS</span>
+        </button>
+        <button class="btn" onclick="goToWally()">
+          <img src="image3.png" alt="Wheres Wally" />
+          <span class="btn-text">WHERES WALLY</span>
+        </button>
+        <button class="btn" onclick="goToStick()">
+          <img src="image4.png" alt="Stick Hero" />
+          <span class="btn-text">STICK HERO</span>
+        </button>
+        <!-- Add more buttons for additional games -->
+      </div>
+      <h3>mailedgames.online</h3>
     </div>
     <script>
       function startSudoku() {
@@ -79,12 +134,15 @@
       function goToNonograms() {
         window.location.href = "nonograms.html";
       }
+
       function goToWally() {
         window.location.href = "wally.html";
       }
+
       function goToStick() {
         window.location.href = "stick.html";
       }
+      // Other functions for game redirection...
     </script>
   </body>
 </html>
