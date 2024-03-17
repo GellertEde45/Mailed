@@ -1,149 +1,175 @@
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Mailed Games</title>
-    <link rel="icon" type="image/png" href="logo.png">
-    <!-- Add any additional stylesheets or meta tags here -->
-</head>
-
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Mailed Games</title>
-  <style>
-    /* Styles for the sidebar menu */
-    .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #5489dd;
-      overflow-x: hidden;
-      padding-top: 60px;
-      transition: 0.5s;
-    }
-
-    .sidebar a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #ffffff;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .sidebar a:hover {
-      color: #f1f1f1;
-    }
-
-    .sidebar .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-
-    .openbtn {
-      font-size: 20px;
-      cursor: pointer;
-      background-color: #5489dd;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      position: absolute;
-      top: 20px; /* Adjust top position as needed */
-      left: 20px; /* Adjust left position as needed */
-    }
-
-    .openbtn:hover {
-      background-color: #5489dd;
-    }
-
-    /* Style page content */
-    #main {
-      transition: margin-left .5s;
-      padding: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- Sidebar -->
-    <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="index.html">Home</a>
-      <a href=" ">  </a>
-      <a href="downloads.html">Online Games</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <!-- Page content -->
-    <div id="main">
-      <button class="openbtn" onclick="openNav()">&#9776; Sidebar</button>
-    </div>
-  </div>
-
-  <script>
-    // Function to open the sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-    }
-
-    // Function to close the sidebar
-    function closeNav() {
-      document.getElementById("mySidebar").style.width = "0";
-      document.getElementById("main").style.marginLeft= "0";
-    }
-  </script>
-</body>
-</html>
-
-
-
-
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daily Mailed Games</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Online Puzzle Games</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+        background: #f5f5f5;
+      }
+
+      nav {
+        background-color: #5489dd;
+        padding: 10px 0;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 10px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px;
+      }
+
+      .logo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 70px;
+        line-height: 60px;
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        font-size: 23px;
+        margin: 0;
+        text-transform: uppercase;
+        margin-top: 10px;
+      }
+
+      h3 {
+        opacity: 0.3;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16px;
+        margin-top: 30px;
+      }
+
+      .btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      .btn {
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .btn img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .btn:hover {
+        transform: scale(1.1) rotate(360deg);
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-text {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <img src="logo.png" alt="Daily Mailed Games Logo" class="logo" />
-      <h1>Daily Mailed Games</h1>
-      <div class="content">
-        <p>
-          Explore our selection of exciting puzzle games that will keep you entertained
-          daily!
-        </p>
-        
-        </div>
-      <script>(function(d,n,o,k,p,l){var s,c,i;d.getElementById(o)||(s=d.getElementsByTagName(n),c=s[s.length-1],i=d.createElement(n),i.type="text/javascript",i.async=!0,i.id = o,i.src = ["https:" === location.protocol ? "https://" : "http://", "www.surveyol.com/Scripts/custom/site/webembed.js"].join(""),i.setAttribute("data-key", k),i.setAttribute("data-prefix", p),i.setAttribute("data-channel", l),c.parentNode.insertBefore(i,c))})(document, "script", "surveyol-sc", "97D9B74", "www.surveyol.com","")</script>
-        <a
-          style="
-            font: 12px Helvetica, sans-serif;
-            color: #999;
-            text-decoration: none;
-          "
-          href="https://www.mailedgames.online"
-          > </a
-        >
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mailedgames.html">Mailed Games</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="content-container">
+      <img class="logo" src="logo1.png" alt="Logo 1" />
+      <h1>Online Puzzle Games</h1>
+      <h2>Choose a game to play:</h2>
+      <div class="btn-container">
+        <button class="btn" onclick="startSudoku()">
+          <img src="image1.png" alt="Sudoku" />
+          <span class="btn-text">SUDOKU</span>
+        </button>
+        <button class="btn" onclick="goToNonograms()">
+          <img src="image2.png" alt="Nonograms" />
+          <span class="btn-text">NONOGRAMS</span>
+        </button>
+        <button class="btn" onclick="goToWally()">
+          <img src="image35.png" alt="Wheres Wally" />
+          <span class="btn-text">WHERES WALLY</span>
+        </button>
+        <button class="btn" onclick="goToStick()">
+          <img src="image4.png" alt="Stick Hero" />
+          <span class="btn-text">STICK HERO</span>
+        </button>
+        <!-- Add more buttons for additional games -->
       </div>
+      <h3>mailedgames.online</h3>
     </div>
+    <script>
+      function startSudoku() {
+        window.location.href = "sudoku.html";
+      }
+
+      function goToNonograms() {
+        window.location.href = "nonograms.html";
+      }
+
+      function goToWally() {
+        window.location.href = "wally.html";
+      }
+
+      function goToStick() {
+        window.location.href = "stick.html";
+      }
+      // Other functions for game redirection...
+    </script>
   </body>
 </html>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4960111577446412"
-     crossorigin="anonymous"></script>
-<meta name="ea31c6a6d61e9f46e5d488f84fc5032c0e2c7aa0" content="ea31c6a6d61e9f46e5d488f84fc5032c0e2c7aa0" />
+
